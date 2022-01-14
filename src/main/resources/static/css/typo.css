@@ -228,10 +228,11 @@
 .typo-p, .typo-pre, .typo-ul, .typo-ol, .typo-dl, .typo-form, .typo-hr, .typo-table, blockquote {
   margin-bottom: 1.2em
 }
-
+/* 设置标题的颜色、行高、字体以及粗粒度 */
 .typo h1,.typo  h2,.typo  h3,.typo  h4,.typo  h5,.typo  h6 {
   font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
-  font-weight: 100;
+  font-weight: 500;
+  /*font-weight: bold;*/
   color: #000;
   line-height: 1.35;
 }
@@ -244,6 +245,7 @@
   line-height: 1.35;
 }
 
+/* 设置h1-h4的大小 */
 .typo h1, .typo-h1 {
   font-size: 2em;
 }

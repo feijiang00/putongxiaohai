@@ -1,5 +1,5 @@
 body{
-    background-image: url("../images/backimg1.jpg");
+    background-image: url("../images/bg.jpg");
     background-attachment:fixed;
     background-size: 100%;
     no-repeat: center top;
@@ -11,12 +11,16 @@ body{
     height: 650px;
     object-fit: cover;
 }
+/*padded 上下间隔*/
 .m-padded-mini {
     padding: 0.2em !important;
 }
 
 .m-padded-tiny {
     padding: 0.3em !important;
+}
+.m-padded-moddle{
+	padding: 0.8em !important;
 }
 .m-padded {
     padding: 1em !important;
@@ -51,7 +55,7 @@ body{
 }
 .m-padded-tb-hugex {
     padding-top: 60px !important;
-    padding-bottom: 60px !important;
+    padding-bottom: 30px !important;
 }
 
 .m-padded-tb-massivex {
@@ -133,6 +137,9 @@ body{
 .m-margin-top-small {
     margin-top:0.5em !important;
 }
+.m-margin-top-tiny{
+	margin-top: 0.6em !important;
+}
 .m-margin-top {
     margin-top: 1em !important;
 }
@@ -144,7 +151,7 @@ body{
 }
 
 .m-margin-top-maxx {
-     margin-top: 5em !important;
+     margin-top: 4em !important;
  }
 .m-margin-top-maxxx {
     margin-top: 19em !important;
@@ -184,7 +191,7 @@ body{
     /*margin-left: auto!important;*/
 /*}*/
 
-/*-----opacity------*/
+/*-----opacity 透明度------*/
 .m-opacity {
     opacity: 0.9 !important;
 }
@@ -217,7 +224,7 @@ body{
 }
 
 
-/*-----container*/
+/*-----container : 调整页面宽度*/
 .m-container-mini{
     max-width: 100em !important;
     margin: auto !important;
@@ -252,6 +259,15 @@ body{
     bottom: 0 !important;
     right: 0 !important;
 }
+
+
+.m-title-font{
+    font-family: STSong;
+    font-weight: 900;
+    font-size: 30px;
+
+}
+
 
 /*-----color-----*/
 .m-black {

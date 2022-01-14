@@ -3,18 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONESTAR-音乐盒</title>
-
-    <link href="../static/images/me.jpg" th:href="@{/images/me.jpg}" rel="icon" type="image/x-ico">
+    <link href="../static/images/favicon.ico" th:href="@{/images/me.png}" rel="icon" type="image/x-ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
     <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
     <link rel="stylesheet" href="../static/lib/music/css/zplayer.min.css" th:href="@{/lib/music/css/zplayer.min.css}" />
-    <script type="text/javascript" src="../static/lib/music/js/zplayer.min.js" th:src="@{/lib/music/js/zplayer.min.js}"></script>
-    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-
-
-
+    <title>音乐盒</title>
 </head>
 <body>
 
@@ -22,21 +15,22 @@
 <nav class="gird-header">
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
-            <h2 class="ui olive header item" style="font-family: STSong">ONESTAR</h2>
+            <h2 class="ui teal header item">Feijiang's Blog</h2>
             <!--<div class="right m-item item m-mobile-hide">-->
-                <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
-                <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="clone outline icon"></i>分类</a>
-                <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="clock icon"></i>时间轴</a>
-                <a href="#" class="active m-item item m-mobile-hide"><i class="music icon"></i>音乐盒</a>
-                <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="book icon"></i>留言板</a>
-                <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="pencil alternate icon"></i>友人帐</a>
-                <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="image icon"></i>照片墙</a>
-                <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+            <a href="#" target="_blank" th:href="@{/}" class=" m-item item m-mobile-hide"><i class=" home icon"></i>首页</a>
+            <a href="#" target="_blank" th:href="@{/types/-1}" class="m-item item m-mobile-hide"><i class=" idea icon"></i>分类</a>
+
+            <a href="#" target="_blank" th:href="@{/archives}" class=" m-item item m-mobile-hide"><i class=" clock icon"></i>归档</a>
+            <a href="#" th:href="@{/music}" class="active m-item item m-mobile-hide"><i class="music icon"></i>音乐盒</a>
+            <a href="#" target="_blank" th:href="@{/message}" class=" m-item item m-mobile-hide"><i class="book icon"></i>留言板</a>
+            <a href="#" target="_blank" th:href="@{/picture}" class=" olive m-item item m-mobile-hide"><i class=" image icon"></i>照片墙</a>
+            <a href="#" target="_blank" th:href="@{/friends}" class=" m-item item m-mobile-hide"><i class="pencil alternate icon"></i>友链</a>
+            <a href="#" target="_blank" th:href="@{/about}" class=" m-item item m-mobile-hide"><i class=" info icon"></i>关于我</a>
             <!--</div>-->
             <div class="right m-item item m-mobile-hide">
-                <form name="search" action="#" method="post" target="_blank">
+                <form name="search" action="#" th:action="@{/search}" method="post" target="_blank">
                     <div class="ui icon transparent input m-margin-tb-tiny" style="color: white">
-                        <input style="color: white" type="text" name="query" placeholder="Search....">
+                        <input style="color: white" type="text" name="query" placeholder="Search...." th:value="${query}">
                         <i onclick="document.forms['search'].submit()" class="search link icon"></i>
                     </div>
                 </form>
@@ -49,12 +43,12 @@
 </nav>
 
 <!--顶部图片-->
-<div class="m-bg-type_outer" style="width: 100%;height: 40%">
-    <img src="../static/images/music.jpg" th:src="@{/images/music.jpg}" alt="" class="ui m-bg image" style="width: 100%;height: 100%">
+<div class="m-bg-type_outer" style="width: 100%;height: 50%">
+    <img src="../static/images/musicbg.png" th:src="@{/images/musicbg.png}" alt="" class="ui m-bg image" style="width: 100%;height: 100%">
     <div class="m-bg-class_cover">
         <div class="ui container" style="position: relative ;bottom: -540px;">
             <div class="m-font-size-title m-right-bottom" align="center" style="font-family:'STXingkai'">音乐盒</div>
-            <div class="m-font-size-text-init-title m-margin-top" align="center">是啊，我也喜欢温柔，温暖，以及寻找着相互吸引的东西。努力活下去的心，很喜欢</div>
+            <div class="m-font-size-text-init-title m-margin-top" align="center">写代码累了，坐下来泡杯茶，来一首最爱的歌放松一下。</div>
         </div>
     </div>
 </div>
@@ -64,6 +58,11 @@
         <div id="player2"></div>
     </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../static/lib/music/js/zplayer.min.js" th:src="@{/lib/music/js/zplayer.min.js}"></script>
 <script>
     var zp2 = new zplayer({
         element: document.getElementById("player2"),

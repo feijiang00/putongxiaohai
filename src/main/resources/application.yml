@@ -1,9 +1,16 @@
 spring:
   thymeleaf:
     mode: HTML
-
-  #使用哪个配置文件
+  # 使用哪个配置文件
   profiles:
-    active: dev
+    active: pro
   messages:
     basename: i18n/messages
+
+# 设置评论者和留言者的头像
+comment.avatar: /images/avatar.png
+message.avatar: /images/avatar.png
+
+
+
+

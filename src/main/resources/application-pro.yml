@@ -1,11 +1,12 @@
 spring:
   datasource:
     username: root
-    password: 123
+    password: jiang0406@
     # ?serverTimezone=UTC解决时区的报错
-    url: jdbc:mysql://localhost:3306/putongxiaohai_blog?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://121.40.221.224:3306/blog?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource # 使用druid数据源
+
 
     #Spring Boot 默认是不注入这些属性值的，需要自己绑定
     #druid 数据源专有配置
@@ -38,28 +39,23 @@ spring:
   thymeleaf:
     cache: false
 
+
 # 日志设置
 logging:
   level:
     root: warn
-    com.xiaojiang.putongxiaohai: info
-
+    com.oldou: info
   # 日志输出位置
   file:
-    path: log/blog-dev.log
+    path: log/blog-pro.log
 
-
-# mybatis配置
+# MyBatis配置
 mybatis:
-  type-aliases-package: com.xiaojiang.putongxiaohai.model.domain
-  mapper-locations: classpath:mybatis/mapper/*.xml
-  #  config-location: classpath:mybatis/mybatis-config.xml
-  #  这里使用spring中的mybatis配置，使用后，上面自己的配置文件需要注释掉
+  type-aliases-package: com.oldou.pojo
+  mapper-locations: classpath:mapper/*.xml
   configuration:
-    #    此后我们可以不用写xml配置文件，配置都在在configuration配置类中
     map-underscore-to-camel-case: true
 
-
-#    生产环境的端口
+# 生产环境的端口
 server:
   port: 8081
